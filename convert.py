@@ -2,7 +2,7 @@ import xmltodict
 import glob
 import csv
 
-lista_arqs_xml = glob.glob("*.xml")
+lista_arqs_xml = glob.glob("Indiana/*.xml")
 
 lista_laudos = []
 
