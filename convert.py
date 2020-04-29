@@ -39,15 +39,16 @@ for xml in lista_arqs_xml:
             pass
 
         laudo = comparison + "\n" + indication + "\n" + findings + "\n" + impression
-        print(i)
+        print(f'Processing file number: {i}')
 
         lista_laudos.append(laudo)
 
 i = 0
-with open('convert.csv','w') as CSV_File:
-    CSV_File.write("Report\n")
-    for laudos in lista_laudos:
+with open('convert.csv','w') as csv_file:
+    csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_NONNUMERIC)
+    csv_writer.writerow(["Report"])
+    for laudo in lista_laudos:
+        csv_writer.writerow([laudo])
         i += 1
-        CSV_File.write('"' + laudos + '"\n')
 
-print (f"XML Files successfully converted to convert.csv. {i} records were exported.")
+print (f"\nXML Files successfully converted to convert.csv. {i} records were exported.")
