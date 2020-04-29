@@ -45,7 +45,7 @@ for xml in lista_arqs_xml:
 
 i = 0
 with open('convert.csv','w') as csv_file:
-    csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_NONNUMERIC)
+    csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     csv_writer.writerow(["Report"])
     for laudo in lista_laudos:
         csv_writer.writerow([laudo])
